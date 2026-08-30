@@ -19,6 +19,15 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "1.0.1",
+          "buildVersion": "2",
+          "date": "2026-08-31",
+          "localizedDescription": "ポーズを変えるとスカートがめくれたままになる問題を直したよ。",
+          "downloadURL": "https://github.com/ImaiYuji/imanoimai-guide/releases/download/v1.0.1/imanoimai-1.0.1.ipa",
+          "size": 44228551,
+          "minOSVersion": "15.0"
+        },
+        {
           "version": "1.0.0",
           "buildVersion": "1",
           "date": "2026-08-31",
