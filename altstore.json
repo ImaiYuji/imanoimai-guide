@@ -1,0 +1,41 @@
+{
+  "name": "いまのいまい",
+  "subtitle": "今井ちゃんと写真が撮れる AR アプリ",
+  "description": "床に向けると今井ちゃんが現れて、いっしょに写真が撮れる AR アプリです。ポーズ・表情・きせかえを変えられます。",
+  "iconURL": "https://imaiyuji.github.io/imanoimai-guide/icon.png",
+  "website": "https://imaiyuji.github.io/imanoimai-guide/",
+  "tintColor": "#E8558F",
+  "nsfw": false,
+  "apps": [
+    {
+      "name": "いまのいまい",
+      "bundleIdentifier": "com.imaiyuji.imanoimai",
+      "developerName": "今井カンパニー",
+      "subtitle": "今井ちゃんと写真を撮ろう",
+      "localizedDescription": "床や机に向けると、目のまえに今井ちゃんが出てきます。\n\n・ポーズ 105 種、ひょうじょう 41 種、きせかえ 10 パーツ\n・ドラッグで回転、ピンチで拡大\n・「こっちむいて」で顔をこちらに向ける\n・撮った写真はカメラロールに保存されます\n\nQR コードもマーカーも使わず、平面検出だけで動きます。",
+      "iconURL": "https://imaiyuji.github.io/imanoimai-guide/icon.png",
+      "tintColor": "#E8558F",
+      "category": "photo-video",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "buildVersion": "1",
+          "date": "2026-08-31",
+          "localizedDescription": "はじめての公開です。",
+          "downloadURL": "https://github.com/ImaiYuji/imanoimai-guide/releases/download/v1.0.0/imanoimai-1.0.0.ipa",
+          "size": 44251813,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {
+          "NSCameraUsageDescription": "現実の空間にキャラクターを表示するために、カメラを使用します。",
+          "NSPhotoLibraryAddUsageDescription": "撮った写真を保存するために使います。写真を読み取ることはありません。"
+        }
+      }
+    }
+  ],
+  "news": []
+}
