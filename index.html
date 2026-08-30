@@ -242,6 +242,22 @@
   }
   .path { font-family:var(--mono); font-size:.88em; background:var(--accent-soft); border-radius:8px; padding:2px 8px; }
 
+  /* ソースのアドレスは長いので、折り返して読めるようにする */
+  .srcurl {
+    font-family:var(--mono); font-size:14px; line-height:1.7;
+    background:var(--accent-soft); color:var(--ink);
+    border-radius:14px; padding:12px 14px; word-break:break-all;
+  }
+
+  /* Windows と Mac で手順が違うところの目印 */
+  .os {
+    display:inline-block; font-family:var(--display); font-weight:900;
+    font-size:12px; letter-spacing:.06em;
+    background:var(--halo-soft); color:var(--note-ink);
+    border:2px solid var(--note-rule); border-radius:999px;
+    padding:1px 10px; margin-right:6px; vertical-align:2px;
+  }
+
   .note {
     background:var(--note-bg); border:2px solid var(--note-rule); color:var(--note-ink);
     border-radius:20px; padding:15px 18px; margin:14px 0 0;
@@ -418,26 +434,60 @@
   <ol class="steps">
     <li class="step">
       <div class="num">1</div>
-      <h3>パソコンに AltServer を入れる</h3>
-      <p>パソコンで <span class="path">altstore.io</span> を開いて、AltServer をダウンロードしてね。入れたら起動しておいて。画面のすみに小さなアイコンが出るよ。</p>
+      <h3>パソコンの準備</h3>
+      <p><span class="os">Windows</span> さきに <strong>iTunes と iCloud</strong> を入れておいてね。<strong>Microsoft Store 版だと動かない</strong>から、かならず Apple の公式サイトから落としたものを使ってね。</p>
+      <p><span class="os">Mac</span> なにも準備はいらないよ。次にすすんでね。</p>
     </li>
 
     <li class="step">
       <div class="num">2</div>
-      <h3>iPhone に AltStore を入れる</h3>
-      <p>iPhone をパソコンに USB でつないで、ロックを解除してね。AltServer のアイコンから <span class="screen">Install AltStore</span> を選んで、Apple ID を入力すると、iPhone に AltStore が入るよ。</p>
-      <div class="note"><strong>Apple ID は Apple にだけ送られるよ。</strong> AltStore を作った人にも、わたしたちにも届かない仕組みなんだ。</div>
+      <h3>AltServer を入れて起動する</h3>
+      <p>パソコンで <span class="path">altstore.io</span> を開いて、AltServer をダウンロードしてね。</p>
+      <p><span class="os">Mac</span> 中身の <span class="screen">AltServer</span> を「アプリケーション」フォルダに入れて、ダブルクリックで起動。</p>
+      <p><span class="os">Windows</span> zip を展開して <span class="screen">Setup.exe</span> を実行。入れ終わったら、スタートメニューで「AltServer」を検索して、<strong>右クリック →「管理者として実行」</strong>で起動してね。ネットワークの許可を聞かれたら「許可」を選んで。</p>
+      <div class="note">
+        <strong>アイコンはここに出るよ。</strong><br>
+        <span class="os">Mac</span> 画面の<strong>いちばん上の右はし</strong>。時計や Wi-Fi のマークがならんでいるところに、<strong>ひし形（◆）</strong>のアイコンが増えるよ。<br>
+        <span class="os">Windows</span> 画面の<strong>右下</strong>、時計のとなり。見つからないときは <span class="screen">^</span> をクリックすると、かくれているアイコンが出てくるよ。
+      </div>
+      <div class="note"><strong>デスクトップやドックには出ないよ。</strong> ふつうのアプリみたいにウィンドウが開かないから「入ってないのかな」と思いがちだけど、上の場所を見てみてね。</div>
     </li>
 
     <li class="step">
       <div class="num">3</div>
-      <h3>iPhone で信頼の設定をする</h3>
-      <p><span class="screen">設定</span> → <span class="screen">一般</span> → <span class="screen">VPN とデバイス管理</span> → 自分の Apple ID をタップ → <span class="screen">信頼</span>。</p>
-      <p>そのあと <span class="screen">設定</span> → <span class="screen">プライバシーとセキュリティ</span> → <span class="screen">デベロッパモード</span> をオンにしてね。</p>
+      <h3>iPhone をつないで「信頼」する</h3>
+      <p>iPhone をパソコンに USB でつないでね。このとき <strong>iPhone のロックを解除して、ホーム画面が見えている状態</strong>にしておいて。ロックされたままだとパソコンと話せないんだ。</p>
+      <p>つなぐと iPhone に <span class="screen">このコンピュータを信頼しますか？</span> と出るから、<span class="screen">信頼</span> を押して、パスコードを入れてね。</p>
+      <div class="note"><strong>これが「信頼」だよ。</strong> このパソコンに iPhone の中身をさわる許可をあげる操作なんだ。1 回やれば覚えてくれるよ。もし聞かれなかったら、ケーブルを抜いてもう一度さしてみてね。</div>
+      <p>そのあと、Wi-Fi 経由でもやりとりできるようにしておくよ。</p>
+      <p><span class="os">Mac</span> Finder のサイドバーで iPhone をクリック →「一般」タブを下までスクロール →「オプション」の中の <span class="screen">Wi-Fi に接続時にこの iPhone を表示</span> にチェック → 右下の <span class="screen">適用</span>。</p>
+      <p><span class="os">Windows</span> iTunes を開いて Apple ID でサインイン → iPhone の画面で <span class="screen">Wi-Fi 経由でこの iPhone と同期</span> にチェック。</p>
+      <div class="note"><strong>ここを忘れると失敗するよ。</strong> USB でつないでいても、AltServer は Wi-Fi の道を使って iPhone と話すんだ。このチェックが入っていないと「デバイスに接続できません」って言われちゃう。</div>
     </li>
 
     <li class="step">
       <div class="num">4</div>
+      <h3>iPhone に AltStore を入れる</h3>
+      <p>さっきのひし形アイコンを<strong>クリック</strong>すると、メニューが開くよ。<span class="screen">Install AltStore</span> にカーソルを合わせると、右に自分の iPhone の名前が出てくるから、それを選んでね。</p>
+      <p>Apple ID とパスワードを聞かれるから入力してね。</p>
+      <div class="note"><strong>Install AltStore ってなにをしてるの？</strong> あなたの Apple ID で「自分用のアプリ」として署名して、iPhone に入れているんだ。だから Apple ID が必要なんだよ。</div>
+      <div class="note">
+        <strong>6 けたの数字を聞かれたら。</strong> 二段階認証のコードだよ。通知が来ないときは iPhone で自分で出せるよ。<br>
+        <span class="screen">設定</span> → いちばん上の自分の名前 → <span class="screen">サインインとセキュリティ</span> → <span class="screen">2 ファクタ認証</span> → <span class="screen">確認コードを入手</span>
+      </div>
+      <p>しばらく待つとパソコンに「できたよ」の通知が出て、iPhone のホーム画面に AltStore のアイコンが増えるよ。出てこないときは iPhone を再起動してみてね。</p>
+    </li>
+
+    <li class="step">
+      <div class="num">5</div>
+      <h3>iPhone で信頼とデベロッパモード</h3>
+      <p><span class="screen">設定</span> → <span class="screen">一般</span> → <span class="screen">VPN とデバイス管理</span> → 自分の Apple ID をタップ → <span class="screen">信頼</span>。</p>
+      <p>つぎに <span class="screen">設定</span> → <span class="screen">プライバシーとセキュリティ</span> → <span class="screen">デベロッパモード</span> をオンにしてね。<strong>iPhone の再起動が必要</strong>だよ。</p>
+      <div class="note"><strong>1 回だけの設定だよ。</strong> アプリを入れるたびにやる必要はないんだ。あとからオフに戻すこともできるよ。</div>
+    </li>
+
+    <li class="step">
+      <div class="num">6</div>
       <h3>AltStore に「いまのいまい」を登録する</h3>
       <p>AltStore を開いて <span class="screen">Browse</span> タブ → 右上の <span class="screen">+</span> を押して、下のアドレスを入れてね。</p>
       <p class="srcurl">https://imaiyuji.github.io/imanoimai-guide/altstore.json</p>
@@ -445,9 +495,9 @@
     </li>
 
     <li class="step">
-      <div class="num">5</div>
+      <div class="num">7</div>
       <h3>インストールして、カメラを許可</h3>
-      <p>一覧の「いまのいまい」をタップして <span class="screen">FREE</span> を押すとインストールがはじまるよ。パソコンの AltServer は起動したままにしておいてね。</p>
+      <p>一覧の「いまのいまい」をタップして <span class="screen">FREE</span> を押すとインストールがはじまるよ。<strong>パソコンの AltServer は起動したまま</strong>にしておいてね。</p>
       <p>ひらいたら、カメラの許可を聞かれるから <span class="screen">許可</span> を選んでね。</p>
       <div class="note"><strong>7 日たったら。</strong> AltStore をひらいて <span class="screen">My Apps</span> → <span class="screen">Refresh All</span> を押すと、また開けるようになるよ。パソコンの AltServer が起動していて、同じ Wi-Fi につながっている必要があるんだ。</div>
     </li>
