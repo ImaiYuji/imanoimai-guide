@@ -249,6 +249,24 @@
     border-radius:14px; padding:12px 14px; word-break:break-all;
   }
 
+  /* 説明の図 */
+  figure { margin:16px 0 4px; }
+  figure svg { display:block; width:100%; max-width:100%; height:auto; color:var(--ink); }
+  figcaption {
+    margin-top:8px; font-size:14px; color:var(--ink-soft); text-align:center; line-height:1.7;
+  }
+  .scr { fill:none; stroke:currentColor; stroke-width:2; opacity:.45; }
+  .bar { fill:currentColor; opacity:.09; }
+  .dot { fill:currentColor; opacity:.35; }
+  .lbl { font-family:var(--body); font-size:12px; fill:currentColor; opacity:.75; }
+  .hit { fill:var(--accent); }
+  .ring { fill:none; stroke:var(--accent); stroke-width:2; opacity:.55; }
+  .lead { stroke:var(--accent); stroke-width:2; fill:none; }
+  .cap  { font-family:var(--display); font-weight:700; font-size:13px; fill:var(--accent); }
+  .menu { fill:var(--cloud); stroke:currentColor; stroke-width:2; }
+  .mrow { font-family:var(--body); font-size:12.5px; fill:currentColor; }
+  .msel { fill:var(--accent); opacity:.16; }
+
   /* Windows と Mac で手順が違うところの目印 */
   .os {
     display:inline-block; font-family:var(--display); font-weight:900;
@@ -450,6 +468,41 @@
         <span class="os">Mac</span> 画面の<strong>いちばん上の右はし</strong>。時計や Wi-Fi のマークがならんでいるところに、<strong>ひし形（◆）</strong>のアイコンが増えるよ。<br>
         <span class="os">Windows</span> 画面の<strong>右下</strong>、時計のとなり。見つからないときは <span class="screen">^</span> をクリックすると、かくれているアイコンが出てくるよ。
       </div>
+      <figure>
+        <svg viewBox="0 0 620 250" role="img" aria-label="AltServer のアイコンは、Mac では画面いちばん上の右はし、Windows では画面いちばん下の右はしに出る">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+            </marker>
+          </defs>
+
+          <text class="cap" x="20" y="18">Mac</text>
+          <rect class="scr" x="20" y="28" width="270" height="170" rx="10"/>
+          <rect class="bar" x="22" y="30" width="266" height="20"/>
+          <circle class="dot" cx="196" cy="40" r="4"/>
+          <circle class="dot" cx="212" cy="40" r="4"/>
+          <circle class="dot" cx="228" cy="40" r="4"/>
+          <path class="hit" d="M250 33 L257 40 L250 47 L243 40 Z"/>
+          <circle class="ring" cx="250" cy="40" r="11"/>
+          <text class="lbl" x="266" y="44">12:34</text>
+          <path class="lead" d="M250 62 L250 96" marker-end="url(#ar)"/>
+          <text class="cap" x="250" y="114" text-anchor="middle">いちばん上の右はし</text>
+          <text class="lbl" x="250" y="132" text-anchor="middle">時計や Wi-Fi のとなり</text>
+
+          <text class="cap" x="330" y="18">Windows</text>
+          <rect class="scr" x="330" y="28" width="270" height="170" rx="10"/>
+          <rect class="bar" x="332" y="176" width="266" height="20"/>
+          <text class="lbl" x="492" y="190">^</text>
+          <circle class="dot" cx="514" cy="186" r="4"/>
+          <path class="hit" d="M536 179 L543 186 L536 193 L529 186 Z"/>
+          <circle class="ring" cx="536" cy="186" r="11"/>
+          <text class="lbl" x="552" y="190">12:34</text>
+          <path class="lead" d="M536 164 L536 130" marker-end="url(#ar)"/>
+          <text class="cap" x="470" y="114" text-anchor="middle">いちばん下の右はし</text>
+          <text class="lbl" x="470" y="132" text-anchor="middle">見えないときは ^ をクリック</text>
+        </svg>
+        <figcaption>ひし形（◆）のアイコンをさがしてね。Mac は上、Windows は下だよ。</figcaption>
+      </figure>
       <div class="note"><strong>デスクトップやドックには出ないよ。</strong> ふつうのアプリみたいにウィンドウが開かないから「入ってないのかな」と思いがちだけど、上の場所を見てみてね。</div>
     </li>
 
@@ -470,6 +523,36 @@
       <h3>iPhone に AltStore を入れる</h3>
       <p>さっきのひし形アイコンを<strong>クリック</strong>すると、メニューが開くよ。<span class="screen">Install AltStore</span> にカーソルを合わせると、右に自分の iPhone の名前が出てくるから、それを選んでね。</p>
       <p>Apple ID とパスワードを聞かれるから入力してね。</p>
+      <figure>
+        <svg viewBox="0 0 560 210" role="img" aria-label="AltServer のアイコンをクリックしてメニューを開き、Install AltStore にカーソルを合わせると、自分の iPhone の名前が右に出てくる">
+          <defs>
+            <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)"/>
+            </marker>
+          </defs>
+
+          <path class="hit" d="M40 22 L47 29 L40 36 L33 29 Z"/>
+          <circle class="ring" cx="40" cy="29" r="12"/>
+          <text class="lbl" x="40" y="60" text-anchor="middle">クリック</text>
+          <path class="lead" d="M60 29 L98 29" marker-end="url(#ar2)"/>
+
+          <rect class="menu" x="110" y="8" width="200" height="128" rx="10"/>
+          <text class="mrow" x="126" y="32">About AltServer</text>
+          <rect class="msel" x="114" y="42" width="192" height="26" rx="6"/>
+          <text class="mrow" x="126" y="60">Install AltStore</text>
+          <text class="mrow" x="292" y="60" text-anchor="end">▸</text>
+          <text class="mrow" x="126" y="88">Enable JIT</text>
+          <text class="mrow" x="126" y="116">Quit AltServer</text>
+
+          <path class="lead" d="M312 55 L352 55" marker-end="url(#ar2)"/>
+          <rect class="menu" x="360" y="38" width="180" height="38" rx="10"/>
+          <text class="mrow" x="376" y="62">あなたの iPhone</text>
+
+          <text class="cap" x="450" y="104" text-anchor="middle">これを選ぶ</text>
+          <text class="lbl" x="450" y="124" text-anchor="middle">自分の iPhone の名前が出るよ</text>
+        </svg>
+        <figcaption>アイコンをクリック → <strong>Install AltStore</strong> にカーソルを合わせると、右に iPhone の名前が出てくるよ。</figcaption>
+      </figure>
       <div class="note"><strong>Install AltStore ってなにをしてるの？</strong> あなたの Apple ID で「自分用のアプリ」として署名して、iPhone に入れているんだ。だから Apple ID が必要なんだよ。</div>
       <div class="note">
         <strong>6 けたの数字を聞かれたら。</strong> 二段階認証のコードだよ。通知が来ないときは iPhone で自分で出せるよ。<br>
