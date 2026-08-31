@@ -694,6 +694,22 @@
       <div class="ans"><p>その端末が AR に対応してないときの表示だよ。AR は使えないけど、今井ちゃんを見たり動かしたりはできるよ。対応してるかどうかは、Google の ARCore 対応リストで確認できるよ。</p></div>
     </details>
     <details>
+      <summary>「AltServer could not be found」って出る（iPhone）</summary>
+      <div class="ans">
+        <p>iPhone がパソコンの AltServer を見つけられていないよ。<strong>いちばん多い原因は、AltStore に「ローカルネットワーク」の許可をあげていないこと</strong>なんだ。</p>
+        <p><span class="screen">設定</span> → 下にスクロールして <span class="screen">AltStore</span> → <span class="screen">ローカルネットワーク</span> をオンにしてね。</p>
+        <div class="note"><strong>これ、最初の 1 回しか聞かれないんだ。</strong> AltStore をはじめて開いたときに「ローカルネットワーク上のデバイスの検索と接続を求めています」って出るんだけど、そこで「許可しない」を押しちゃうと、二度と聞かれないまま つながらなくなっちゃうよ。あとから設定でオンにすれば直るから安心してね。</div>
+        <p>それでもダメなときは、上から順に試してみてね。</p>
+        <ul>
+          <li><strong>iPhone のロックを解除</strong>して、ホーム画面が見えている状態にする</li>
+          <li>パソコンの <strong>AltServer が起動しているか</strong>たしかめる（Windows は右下、Mac は右上の ◆ アイコン）。Windows は<strong>「管理者として実行」</strong>で起動してね</li>
+          <li><strong>USB でつなぐ。</strong> Wi-Fi でさがすのをやめて、直接つながるよ</li>
+          <li><strong>iPhone のテザリングにパソコンをつなぐ。</strong> 大学や職場、お店の Wi-Fi は、端末どうしが見つけあうのを禁止していることが多いんだ。学校の Wi-Fi だと まず動かないから、これで回避してね</li>
+          <li>Windows なら、<strong>ファイアウォールで AltServer を許可</strong>する</li>
+        </ul>
+      </div>
+    </details>
+    <details>
       <summary>撮った写真が どこにあるか わからない</summary>
       <div class="ans"><p>端末のギャラリーに <span class="screen">いまのいまい</span> っていうアルバムができてるよ。ほぞん先は <span class="path">Pictures/いまのいまい</span> だよ。</p></div>
     </details>
