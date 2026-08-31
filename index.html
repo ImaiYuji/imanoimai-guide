@@ -328,6 +328,28 @@
   }
   .credit strong { font-family:var(--display); font-weight:700; }
   .credit a { color:var(--accent); font-weight:700; }
+  .vs { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0 6px; }
+  .vs-card { border-radius:14px; padding:14px 15px; background:rgba(255,255,255,.6); border:2px solid var(--rule); }
+  .vs-ok { border-color:#1f9d6b; }
+  .vs-ng { border-color:#c2456b; }
+  .vs-name { font-family:var(--display); font-weight:700; font-size:16px; margin:0 0 2px; }
+  .vs-verdict { margin:0 0 10px; font-weight:700; font-size:13.5px; }
+  .vs-ok .vs-verdict, .vs-ok .vs-res { color:#1f9d6b; }
+  .vs-ng .vs-verdict, .vs-ng .vs-res { color:#c2456b; }
+  .vs-card dl { margin:0; font-size:13.5px; line-height:1.75; }
+  .vs-card dt { font-weight:700; opacity:.72; margin-top:8px; }
+  .vs-card dd { margin:0; }
+  .vs-res { margin:12px 0 0; font-weight:700; font-size:13.5px; }
+  .vs-cap { font-size:13.5px; margin:4px 0 0; }
+  @media (max-width:560px) { .vs { grid-template-columns:1fr; } }
+  .warn {
+    border:2px solid var(--accent); border-radius:16px;
+    padding:18px 20px; margin:0 0 22px;
+    background:rgba(255,255,255,.55);
+  }
+  .warn > strong:first-child { display:block; font-size:17px; margin-bottom:8px; color:var(--accent); }
+  .warn p { margin:10px 0; }
+  .warn figure { margin:14px 0; }
   .creditnote { max-width:420px; margin:0 auto 16px; font-size:13.5px; line-height:1.9; }
   footer .orn { margin-bottom:12px; }
   footer p { margin:0 0 6px; }
@@ -451,6 +473,38 @@
     <strong>さきに知っておいてね。</strong> iPhone に入れるには <strong>パソコン（Windows でも Mac でも OK）</strong>と <strong>Apple ID</strong> が必要だよ。それと、入れたアプリは <strong>7 日たつと開けなくなる</strong>から、そのつど入れなおしてね。これは Apple のきまりで、どうにもできないんだ。
   </div>
 
+  <div class="warn">
+    <strong>いちばん大事！ AltStore は 2 しゅるいあるよ</strong>
+    <p>おなじ「AltStore」って名前で、<strong>ぜんぜん別のアプリ</strong>が 2 つあるんだ。このガイドで使うのは <strong>AltStore Classic</strong> のほう。iPhone で altstore.io をひらいて自分でダウンロードすると <strong>AltStore PAL</strong> のほうに案内されちゃって、いまのいまい は入れられないよ。</p>
+
+    <div class="vs">
+      <div class="vs-card vs-ok">
+        <p class="vs-name">AltStore Classic</p>
+        <p class="vs-verdict">こっちを使うよ！</p>
+        <dl>
+          <dt>どこから入れる</dt><dd>パソコンの ◆ から</dd>
+          <dt>ひらいた画面</dt><dd>下に <strong>Browse</strong> と <strong>My Apps</strong> のタブ</dd>
+          <dt>署名するのは</dt><dd>あなたの Apple ID</dd>
+        </dl>
+        <p class="vs-res">いまのいまい 入れられる ○</p>
+      </div>
+
+      <div class="vs-card vs-ng">
+        <p class="vs-name">AltStore PAL</p>
+        <p class="vs-verdict">こっちじゃないよ</p>
+        <dl>
+          <dt>どこから入れる</dt><dd>iPhone で altstore.io から</dd>
+          <dt>ひらいた画面</dt><dd>「ソースを追加」とおすすめ一覧</dd>
+          <dt>署名するのは</dt><dd>Apple の審査（公証）</dd>
+        </dl>
+        <p class="vs-res">いまのいまい 入れられない ×</p>
+      </div>
+    </div>
+    <p class="vs-cap">ひらいた画面の下に <strong>Browse</strong> と <strong>My Apps</strong> のタブがあれば Classic、正解だよ。</p>
+
+    <p><strong>だいじょうぶ、まようことはないよ。</strong> 下の手順 4 でパソコンから入れるのが、ちゃんと Classic のほうなんだ。<strong>iPhone で altstore.io を開く必要はまったくない</strong>から、そのまま順番にすすんでね。</p>
+  </div>
+
   <ol class="steps">
     <li class="step">
       <div class="num">1</div>
@@ -525,6 +579,7 @@
       <h3>iPhone に AltStore を入れる</h3>
       <p>さっきのひし形アイコンを<strong>クリック</strong>すると、メニューが開くよ。<span class="screen">Install AltStore</span> にカーソルを合わせると、右に自分の iPhone の名前が出てくるから、それを選んでね。</p>
       <p>Apple ID とパスワードを聞かれるから入力してね。</p>
+      <div class="note"><strong>ここで入るのが Classic だよ。</strong> このメニューから入ったものが正解の <strong>AltStore Classic</strong>。iPhone 側でさがしに行かなくて大丈夫！</div>
       <figure>
         <svg viewBox="0 0 560 210" role="img" aria-label="AltServer のアイコンをクリックしてメニューを開き、Install AltStore にカーソルを合わせると、自分の iPhone の名前が右に出てくる">
           <defs>
@@ -577,6 +632,7 @@
       <p>AltStore を開いて <span class="screen">Browse</span> タブ → 右上の <span class="screen">+</span> を押して、下のアドレスを入れてね。</p>
       <p class="srcurl">https://imaiyuji.github.io/imanoimai-guide/altstore.json</p>
       <p>登録すると、一覧に「いまのいまい」が出てくるよ。</p>
+      <div class="note"><strong>「マーケットプレイス ID が欠落しています」って出たら。</strong> それは <strong>AltStore PAL</strong> のほうを開いちゃってるよ！ <span class="screen">Browse</span> と <span class="screen">My Apps</span> のタブがあるほうを開いてね。見あたらなかったら、手順 4 をもう一度やれば入るよ。</div>
     </li>
 
     <li class="step">
@@ -707,6 +763,36 @@
         <p>iPhone なら、AltStore の <span class="screen">My Apps</span> からも消せるよ。</p>
       </div>
     </details>
+  </div>
+
+  <h2 id="disclaimer">つかうまえに、ひとつだけ</h2>
+  <p class="h2note">かたい話だけど、だいじなことだから読んでね。</p>
+
+  <div class="warn">
+    <strong>これは個人がつくった、おまけみたいなアプリだよ</strong>
+    <p>会社がつくった製品じゃなくて、ひとりで趣味としてつくって、無料でおすそわけしているものなんだ。App Store や Google Play の審査も通っていないよ。</p>
+    <p>だから、<strong>ちゃんと動くことを約束できないし、なにか起きても責任を負えないんだ。</strong> たとえばこんなこと。</p>
+    <ul>
+      <li>アプリが落ちる、うまく動かない、キャラクターが変な表示になる</li>
+      <li>端末が熱くなる、電池がへる、動きがおもくなる</li>
+      <li>撮った写真が保存されない、消えてしまう</li>
+      <li>インストールの作業のとちゅうで、端末の設定がおかしくなる</li>
+    </ul>
+    <p>こういうことが起きても、なおしてあげられないかもしれないし、損害を埋めることもできないんだ。<strong>自分の責任でつかってね</strong>っていうのが、正直なところ。ごめんね。</p>
+    <p>もちろん、わざと悪いことをするようなものは入れていないよ。中身が気になる人のために<strong>ソースコードも公開している</strong>し、なにか困ったら<strong>できるはんいで相談にのる</strong>つもりだよ。</p>
+    <p><strong>大事なデータが入っている端末や、お仕事でつかっている端末には入れないほうがいいと思う。</strong></p>
+  </div>
+
+  <div class="note">
+    <strong>Apple・Google・AltStore とは関係ないよ。</strong> このアプリは、そのどこの会社ともつながりがないんだ。インストールに使う AltStore もべつの人がつくった道具で、そちらで起きたことにも責任を負えないよ。
+  </div>
+
+  <div class="note">
+    <strong>キャラクターや衣装には、つくった人がいるよ。</strong> 3D モデルもポーズも、それぞれ別の作者さんの作品を、規約を守ってつかわせてもらっているんだ。アプリで撮った写真をつかうときは、その作者さんの決まりごとにも気をつけてね。とくに、<strong>人を傷つける使いかたや、作者さんがいやがる使いかたはしないでね。</strong>
+  </div>
+
+  <div class="note">
+    <strong>こまったら聞いてね。</strong> <strong>お兄ちゃん</strong>、もしくは X の <a href="https://x.com/26KC1011" target="_blank" rel="noopener">@26KC1011</a> まで。ぜんぶ解決できるとはかぎらないけど、できるだけ力になるよ！
   </div>
 
 
