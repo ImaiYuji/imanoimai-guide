@@ -329,7 +329,7 @@
   .credit strong { font-family:var(--display); font-weight:700; }
   .credit a { color:var(--accent); font-weight:700; }
   .vs { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0 6px; }
-  .vs-card { border-radius:14px; padding:14px 15px; background:rgba(255,255,255,.6); border:2px solid var(--rule); }
+  .vs-card { border-radius:14px; padding:14px 15px; background:var(--cloud); color:var(--ink); border:2px solid var(--rule); }
   .vs-ok { border-color:#1f9d6b; }
   .vs-ng { border-color:#c2456b; }
   .vs-name { font-family:var(--display); font-weight:700; font-size:16px; margin:0 0 2px; }
@@ -345,7 +345,7 @@
   .warn {
     border:2px solid var(--accent); border-radius:16px;
     padding:18px 20px; margin:0 0 22px;
-    background:rgba(255,255,255,.55);
+    background:var(--cloud); color:var(--ink);
   }
   .warn > strong:first-child { display:block; font-size:17px; margin-bottom:8px; color:var(--accent); }
   .warn p { margin:10px 0; }
@@ -509,7 +509,19 @@
     <li class="step">
       <div class="num">1</div>
       <h3>パソコンの準備</h3>
-      <p><span class="os">Windows</span> さきに <strong>iTunes と iCloud</strong> を入れておいてね。<strong>Microsoft Store 版だと動かない</strong>から、かならず Apple の公式サイトから落としたものを使ってね。</p>
+      <p><span class="os">Windows</span> さきに <strong>iTunes と iCloud のふたつ</strong>を入れておいてね。<strong>かならず下のリンクから</strong>落としてね。</p>
+      <p class="srcurl">iTunes（64bit）<br>https://www.apple.com/itunes/download/win64</p>
+      <p class="srcurl">iCloud<br>https://updates.cdn-apple.com/2020/windows/001-39935-20200911-1A70AA56-F448-11EA-8CC0-99D41950005E/iCloudSetup.exe</p>
+
+      <div class="warn">
+        <strong>Microsoft Store 版だと、ぜったいに動かないよ</strong>
+        <p>おなじ iTunes でも、<strong>Microsoft Store から入れたものは AltServer から見えない</strong>んだ。Store のアプリは他とへだてられた場所に入るしくみで、AltServer がさがしている目印を残さないからだよ。</p>
+        <p>だから <strong>「iTunes を入れてください」と何度も言われて、入れてもまた言われる</strong>という無限ループになっちゃう。iTunes 自体はちゃんと動いているのに、AltServer からだけ見えていない状態なんだ。</p>
+        <p><strong>Windows 11 だと Apple のサイトが「Apple Devices」というアプリをすすめてくる</strong>けど、これも Store のアプリだから同じことになるよ。えらばないでね。</p>
+        <p><strong>もう入れちゃった人へ。</strong> Store 版の iTunes・iCloud・「Apple Devices」をアンインストールしてから、上のリンクのものを入れ直してね。そのあとパソコンを再起動すると直るよ。</p>
+      </div>
+
+      <div class="note"><strong>iCloud を忘れがちだから気をつけて！</strong> AltServer は Apple ID をたしかめるのに iCloud のぶひんを使うから、iTunes だけだと足りないんだ。ふたつとも入れてね。</div>
       <p><span class="os">Mac</span> なにも準備はいらないよ。次にすすんでね。</p>
     </li>
 
